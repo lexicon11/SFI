@@ -1,0 +1,31 @@
+﻿@model SFI.Models.Movie
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+@Html.ActionLink("Back to listing", "Index", "Movies")
+<div class="panel">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Serial No</th>
+                    <th>Movie Name</th>
+                    <th>Movie Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Type</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

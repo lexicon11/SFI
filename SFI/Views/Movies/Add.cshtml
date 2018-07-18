@@ -1,0 +1,22 @@
+﻿@model SFI.Models.Movie
+@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add</h2>
+@using (Html.BeginForm("Save", "Movies"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Movie Name", @id = "movieName" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Type)
+        @Html.TextBoxFor(m => m.Type, new { @class = "form-control", @placeholder = "Movie Type", @id = "movieType" })
+        @Html.ValidationMessageFor(m => m.Type)
+    </div>
+    @Html.HiddenFor(m => m.Id);
+    <button type="submit" class="btn btn-primary">Save</button>
+}
